@@ -1,5 +1,6 @@
-import { useState } from "react"
-import data from "./data"
+import { useState } from "react";
+import data from "./data";
+import "./styles.css";
 
 export default function Accordian()
 {
@@ -20,14 +21,14 @@ export default function Accordian()
                     <div onClick={()=>handleSingleSelection(dataItem.id)} className="title">
                         <h3>{dataItem.question}</h3>
                         <span>+</span>
-                        <div>
+                    </div>
+                    <div>
                             {
                                 selected === dataItem.id ?(
                                 <div className="content">{dataItem.answer}</div>
                                 ): null
                             }
                         </div>
-                    </div>
                 </div>) 
                 : <div>No data found it</div>
             }
