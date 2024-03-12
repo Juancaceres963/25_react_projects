@@ -8,9 +8,9 @@ function App() {
   return (
     <div className="App">
       {/* Import components */}
-      {/*<Accordian />
+      <Accordian />
       <RandonColor />
-      <StarRanting noOfStars={8} />*/}
+      <StarRanting noOfStars={8} />
       <ImageSlider
         url={"https://picsum.photos/v2/list"}
         page={"1"}
