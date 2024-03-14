@@ -1,6 +1,7 @@
 import "./App.css";
 import Accordian from "./components/accordian";
 import ImageSlider from "./components/image-slider";
+import LightDarkMode from "./components/light-dark-mode";
 import LoadMoreData from "./components/load-more-data";
 import QrCodeGenerator from "./components/qr-code-generator";
 import RandonColor from "./components/random-color";
@@ -12,7 +13,7 @@ function App() {
   return (
     <div className="App">
       {/* Import components */}
-      <Accordian />
+      {/* <Accordian />
       <RandonColor />
       <StarRanting noOfStars={8} />
       <ImageSlider
@@ -22,7 +23,8 @@ function App() {
       />
       <LoadMoreData/>
       <TreeView menus={menus}/>
-      <QrCodeGenerator/>
+      <QrCodeGenerator/> */}
+      <LightDarkMode/>
     </div>
   );
 }
