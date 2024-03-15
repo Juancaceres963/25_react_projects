@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       {/* Import components */}
-      {/* <Accordian />
+      <Accordian />
       <RandonColor />
       <StarRanting noOfStars={5} />
       <ImageSlider
@@ -25,7 +25,7 @@ function App() {
       <LoadMoreData/>
       <TreeView menus={menus}/>
       <QrCodeGenerator/>
-      <LightDarkMode/> */}
+      <LightDarkMode/>
       <ScrollIndicator url={"https://dummyjson.com/products?limit=100"}/>
     </div>
   );
