@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./styles.css";
+import "./scroll.css";
 
 export default function ScrollIndicator({ url }) {
   const [data, setData] = useState([]);
@@ -54,9 +55,25 @@ export default function ScrollIndicator({ url }) {
 
   console.log(data, scrollPorcentage);
 
+  if (errorMessage) {
+    <div>Error ! {errorMessage}</div>;
+  }
+
+  if (loading) {
+    <div>Loading data ! Please wait.</div>;
+  }
+
   return (
     <div>
-      <h1>Custon Scroll Indicator</h1>
+      <div className="top-container">
+        <h1>Custon Scroll Indicator</h1>
+        <div className="scroll-progress-tracking-container">
+          <div
+            className="current-progress-bar"
+            style={{ width: `${scrollPorcentage}% ` }}
+          ></div>
+        </div>
+      </div>
       <div className="data-container">
         {data && data.length > 0
           ? data.map((dataItem) => (
