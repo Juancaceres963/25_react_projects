@@ -5,6 +5,7 @@ export default function ScrollIndicator({ url }) {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [scrollPorcentage, setScrollPorcentage] = useState(0);
 
   async function fetchData(getUrl) {
     try {
@@ -26,17 +27,44 @@ export default function ScrollIndicator({ url }) {
     fetchData(url);
   }, [url]);
 
-  console.log(data, loading);
+  function handleScrollPorcentage() {
+    console.log(
+      document.body.scrollTop,
+      document.documentElement.scrollTop,
+      document.documentElement.scrollHeight,
+      document.documentElement.clientHeight
+    );
+
+    const howMuchScrolled =
+      document.body.scrollTop || document.documentElement.scrollTop;
+
+    const height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+
+    setScrollPorcentage((howMuchScrolled / height) * 100);
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScrollPorcentage);
+    return () => {
+      window.removeEventListener("scroll", () => {});
+    };
+  }, []);
+
+  console.log(data, scrollPorcentage);
 
   return (
     <div>
       <h1>Custon Scroll Indicator</h1>
       <div className="data-container">
         {data && data.length > 0
-          ? data.map((dataItem) => <div className="item-container">
-            <p className="dataItem-title">{dataItem.title}</p>
-            <p className="dataItem-brand">{`~ ${dataItem.brand} ~`}</p>
-            </div>)
+          ? data.map((dataItem) => (
+              <div className="item-container">
+                <p className="dataItem-title">{dataItem.title}</p>
+                <p className="dataItem-brand">{`~ ${dataItem.brand} ~`}</p>
+              </div>
+            ))
           : null}
       </div>
     </div>
