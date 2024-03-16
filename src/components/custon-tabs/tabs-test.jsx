@@ -1,4 +1,5 @@
 import Tabs from "./tabs";
+import "./tabs.css";
 
 function RandonComponent() {
   return <h1>Some Randon Component</h1>;
