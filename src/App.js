@@ -1,5 +1,6 @@
 import "./App.css";
 import Accordian from "./components/accordian";
+import TabsTest from "./components/custon-tabs/tabs-test";
 import ImageSlider from "./components/image-slider";
 import LightDarkMode from "./components/light-dark-mode";
 import LoadMoreData from "./components/load-more-data";
@@ -14,7 +15,7 @@ function App() {
   return (
     <div className="App">
       {/* Import components */}
-      <Accordian />
+      {/* <Accordian />
       <RandonColor />
       <StarRanting noOfStars={5} />
       <ImageSlider
@@ -26,7 +27,8 @@ function App() {
       <TreeView menus={menus}/>
       <QrCodeGenerator/>
       <LightDarkMode/>
-      <ScrollIndicator url={"https://dummyjson.com/products?limit=100"}/>
+      <ScrollIndicator url={"https://dummyjson.com/products?limit=100"}/> */}
+      <TabsTest/>
     </div>
   );
 }
