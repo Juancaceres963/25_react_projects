@@ -1,5 +1,6 @@
 import "./App.css";
 import Accordian from "./components/accordian";
+import ModalTest from "./components/custom-model-popup/modal-test";
 import TabsTest from "./components/custon-tabs/tabs-test";
 import ImageSlider from "./components/image-slider";
 import LightDarkMode from "./components/light-dark-mode";
@@ -27,8 +28,9 @@ function App() {
       <TreeView menus={menus}/>
       <QrCodeGenerator/>
       <LightDarkMode/>
-      <ScrollIndicator url={"https://dummyjson.com/products?limit=100"}/> */}
-      <TabsTest/>
+      <ScrollIndicator url={"https://dummyjson.com/products?limit=100"}/>
+      <TabsTest/> */}
+      <ModalTest/>
     </div>
   );
 }
