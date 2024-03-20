@@ -2,6 +2,7 @@ import "./App.css";
 import Accordian from "./components/accordian";
 import ModalTest from "./components/custom-model-popup/modal-test";
 import TabsTest from "./components/custon-tabs/tabs-test";
+import GithubProfileFinder from "./components/github-profile-finder";
 import ImageSlider from "./components/image-slider";
 import LightDarkMode from "./components/light-dark-mode";
 import LoadMoreData from "./components/load-more-data";
@@ -16,7 +17,7 @@ function App() {
   return (
     <div className="App">
       {/* Import components */}
-      <Accordian />
+      {/* <Accordian />
       <RandonColor />
       <StarRanting noOfStars={5} />
       <ImageSlider
@@ -30,7 +31,8 @@ function App() {
       <LightDarkMode/>
       <ScrollIndicator url={"https://dummyjson.com/products?limit=100"}/>
       <TabsTest/>
-      <ModalTest/>
+      <ModalTest/> */}
+      <GithubProfileFinder/>
     </div>
   );
 }
