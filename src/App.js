@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       {/* Import components */}
-      {/* <Accordian />
+      <Accordian />
       <RandonColor />
       <StarRanting noOfStars={5} />
       <ImageSlider
@@ -29,7 +29,7 @@ function App() {
       <QrCodeGenerator/>
       <LightDarkMode/>
       <ScrollIndicator url={"https://dummyjson.com/products?limit=100"}/>
-      <TabsTest/> */}
+      <TabsTest/>
       <ModalTest/>
     </div>
   );
