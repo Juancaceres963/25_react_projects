@@ -1,13 +1,5 @@
 export default function User({ user }) {
-  const {
-    name,
-    avatar_url,
-    followers,
-    following,
-    public_repos,
-    login,
-    html_url,
-  } = user;
+  const { name, avatar_url, followers, following, public_repos, login } = user;
 
   return (
     <div className="user">
@@ -15,7 +7,7 @@ export default function User({ user }) {
         <img src={avatar_url} className="avatar" alt="User" />
       </div>
       <div>
-        <a href={html_url}>{name || login}</a>
+        <a href={`https://github.com/${login}`}>{name || login}</a>
       </div>
     </div>
   );

@@ -6,7 +6,6 @@ export default function GithubProfileFinder() {
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  function handleSudmit() {}
 
   async function fetchGithubUserData() {
     setLoading(true);
@@ -15,13 +14,15 @@ export default function GithubProfileFinder() {
     const data = await res.json();
 
     if (data) {
-      setUserData(userData);
+      setUserData(data);
       setLoading(false);
       setUserName("");
     }
 
     console.log(data);
   }
+
+  function handleSudmit() {}
 
   useEffect(() => {
     fetchGithubUserData();
