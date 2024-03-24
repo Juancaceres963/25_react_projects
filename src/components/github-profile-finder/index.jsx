@@ -22,7 +22,7 @@ export default function GithubProfileFinder() {
     console.log(data);
   }
 
-  function handleSudmit() {}
+  function handleSudmit() {fetchGithubUserData()}
 
   useEffect(() => {
     fetchGithubUserData();
