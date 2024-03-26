@@ -12,6 +12,7 @@ import ScrollIndicator from "./components/scroll-indicator";
 import StarRanting from "./components/star-rating";
 import TreeView from "./components/tree-view";
 import menus from "./components/tree-view/data";
+import SearchAutocomplete from "./components/search-autocomplete-with-api"
 
 function App() {
   return (
@@ -32,7 +33,8 @@ function App() {
       <ScrollIndicator url={"https://dummyjson.com/products?limit=100"}/>
       <TabsTest/>
       <ModalTest/> */}
-      <GithubProfileFinder/>
+      {/* <GithubProfileFinder/> */}
+      <SearchAutocomplete/>
     </div>
   );
 }
