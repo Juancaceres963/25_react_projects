@@ -2,8 +2,26 @@ import { useEffect, useState } from "react";
 
 export default function SearchAutocomplete() {
   const [loading, setLoading] = useState(false);
-  const [user, setUser] = useState();
+  const [users, setUsers] = useState();
   const [error, setError] = useState(null);
+  const [searchParam, setSearchParam] = useState("");
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [filteredUsers, setFilteredUsers] = useState([]);
+
+  function handleChange(event) {
+    const query = event.target.value.toLowerCase();
+    setSearchParam(query);
+    if (query.length > 1) {
+      const filteredData =
+        users && setUsers
+          ? users.filter((item) => item.toLowerCase().indexOf(query) > -1)
+          : [];
+          setFilteredUsers(filteredData)
+          setShowDropdown(true)
+    } else {
+      setShowDropdown(false)
+    }
+  }
 
   async function fetchListOfUsers() {
     try {
@@ -12,7 +30,7 @@ export default function SearchAutocomplete() {
 
       console.log(data);
       if (data && data.users && data.users.length) {
-        setUser(data.users.map((userItem) => userItem.firstName));
+        setUsers(data.users.map((userItem) => userItem.firstName));
         setLoading(false);
         setError(null);
       }
@@ -27,13 +45,15 @@ export default function SearchAutocomplete() {
     fetchListOfUsers();
   }, []);
 
-  console.log(user);
+  console.log(users, filteredUsers);
   return (
     <div className="search-autocomplete-container">
       <input
+        value={searchParam}
         type="text"
         name="search-user"
         placeholder="Search Users here..."
+        onChange={handleChange}
       />
     </div>
   );
