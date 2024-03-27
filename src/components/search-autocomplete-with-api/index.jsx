@@ -11,9 +11,15 @@ export default function SearchAutocomplete() {
       const data = await response.json();
 
       console.log(data);
+      if (data && data.users && data.users.length) {
+        setUser(data.users.map((userItem) => userItem.firstName));
+        setLoading(false);
+        setError(null);
+      }
     } catch (error) {
       console.log(error);
       setError(error);
+      setLoading(false);
     }
   }
 
@@ -21,6 +27,7 @@ export default function SearchAutocomplete() {
     fetchListOfUsers();
   }, []);
 
+  console.log(user);
   return (
     <div className="search-autocomplete-container">
       <input
